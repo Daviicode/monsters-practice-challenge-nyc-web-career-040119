@@ -20,7 +20,7 @@ json-server monsters.json
 - At the end of the list of monsters, show a button. When clicked, the button should load the next 50 monsters and show them.
 
 ## API methods
-Get the list of monsters given to you in monster.json and render them to the DOM.
+Use a fetch to make a GET request to your database. Then render the monsters you receive to the DOM.
 
 ```js
 GET http://localhost:3000/monsters
@@ -57,7 +57,7 @@ sample response:
 ]
 ```
 
-Create new monsters by using a fetch to post to monster.json.
+Use a fetch to create a new monster by making a POST request to your database.
 
 ```
 POST http://localhost:3000/monsters
@@ -76,9 +76,9 @@ body: JSON.stringify({
 
 sample response:
 {
-  "name": <submitted_name>,
-  "age": <submitted_age>,
-  "description": <submitted_description>,
-  "id": <new_id>
+  name: "Bob Ross",
+  age: 52,
+  description: "Legendary monster whose primary weapon was a paintbrush. Prefers battleing on canvas.",
+  id: 1,001
 }
 ```
