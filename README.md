@@ -19,10 +19,9 @@ json-server monsters.json
 - Above your list of monsters, you should have a form to create a new monster. You should have fields for name, age, and description, and a 'Create Monster Button'. When you click the button, the monster should be added to the list and saved in the API.
 - At the end of the list of monsters, show a button. When clicked, the button should load the next 50 monsters and show them.
 
-
 ## API methods
+Use a fetch to make a GET request to your database. Then render the monsters you receive to the DOM.
 
-Get the list of monsters
 ```js
 GET http://localhost:3000/monsters
 
@@ -58,16 +57,28 @@ sample response:
 ]
 ```
 
-Create a monster
+Use a fetch to create a new monster by making a POST request to your database.
 
 ```
 POST http://localhost:3000/monsters
+
 headers: 
 {
   "Content-Type": "application/json",
   Accept: "application/json"
 }
 
-data:
-{ name: string, age: number, description: string }
+body: JSON.stringify({ 
+  name: <string>, 
+  age: <number>, 
+  description: <string> 
+})
+
+sample response:
+{
+  name: "Bob Ross",
+  age: 52,
+  description: "Legendary monster whose primary weapon was a paintbrush. Prefers battleing on canvas.",
+  id: 1,001
+}
 ```
